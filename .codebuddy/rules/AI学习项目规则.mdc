@@ -32,14 +32,22 @@ provider:
   - ✅ 第3章 线性模型（线性回归、对数线性回归、最小二乘解）
   - ✅ 第4章 决策树（信息增益、增益率、基尼指数、预剪枝、后剪枝）
 
-- **阶段二 神经网络**：33% 完成
+- **阶段二 神经网络**：50% 完成
   - ✅ 神经网络基础（M-P神经元、感知机、激活函数、MLP、前向传播、BP反向传播）
+  - ✅ 词嵌入（One-Hot→Dense Vector、分布式假设、Word2Vec Skip-gram）
   - 🔜 深度学习组件（CNN、RNN、训练技巧）
-  - 🔜 通向语言模型（词嵌入、序列建模、Attention初探）
+  - 🔜 Attention初探 → Transformer 预览
   
 - **阶段三 LLM 预习**：10% 完成
   - ✅ 基于"相似度"的AI视角（向量化、余弦相似度、L2范数）
   - ✅ LLM应用概念（语义搜索、RAG、推荐系统）
+
+- **阶段四 AI 应用**：5% 完成（扩展范畴）
+  - 🔜 LangChain 基础
+  - 🔜 Function Calling 与工具调用
+  - 🔜 RAG 实战
+  - 🔜 多 Agent 协作
+  - 🔜 **OpenClaw 深入学习**（新增重点）
 
 ## 🎯 下一步学习建议
 
@@ -50,8 +58,9 @@ provider:
 - [ ] 第6章：支持向量机（了解即可）
 
 ### LLM 方向（可并行学习）
-- [ ] 词嵌入详解（Word2Vec、GloVe）
-- [ ] Transformer 中的 Attention 机制
+- [x] 词嵌入详解（Word2Vec — 已完成）
+- [ ] Attention 机制原理（QKV、Self-Attention）
+- [ ] Transformer 架构预览
 - [ ] 向量数据库（用于 RAG）
 
 ## 🤖 AI 助手运作规则
