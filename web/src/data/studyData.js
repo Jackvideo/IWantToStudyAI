@@ -19,31 +19,31 @@ export const progressData = {
       id: 2,
       name: '神经网络核心',
       icon: '🧠',
-      status: 'in_progress',
-      progress: 60,
-      duration: '1周（快速版）',
+      status: 'completed',
+      progress: 100,
+      duration: '1周（已完成）',
       color: '#8b5cf6',
-      description: 'MLP/BP + CNN/RNN快速过 + Attention重点',
+      description: 'MLP/BP + CNN/RNN + Attention + Transformer 全部完成',
       chapters: [
         { name: '神经网络基础', status: 'completed', topics: ['神经元', 'MLP', 'BP反向传播', '词嵌入'] },
-        { name: 'CNN/RNN快速理解', status: 'in_progress', topics: ['卷积核', '隐藏状态', '长程依赖'] },
-        { name: 'Attention + Transformer', status: 'pending', topics: ['Self-Attention', 'QKV', 'Transformer架构'] },
+        { name: 'CNN/RNN快速理解', status: 'completed', topics: ['卷积核', '隐藏状态', '长程依赖'] },
+        { name: 'Attention + Transformer', status: 'completed', topics: ['Self-Attention', 'QKV', 'Transformer架构', 'BERT vs GPT'] },
       ]
     },
     {
       id: 3,
       name: '大语言模型',
       icon: '⭐',
-      status: 'preview',
-      progress: 10,
+      status: 'in_progress',
+      progress: 15,
       duration: '3-4周（强化实战）',
       color: '#f59e0b',
-      description: 'Transformer、GPT、Prompt Engineering、API实战',
+      description: 'Tokenization → 预训练 → Prompt工程 → API实战 → RAG系统',
       chapters: [
-        { name: 'Transformer 深入', status: 'pending', topics: ['Self-Attention', 'Multi-Head', 'Position Encoding', 'Hugging Face'] },
-        { name: 'LLM 原理', status: 'pending', topics: ['预训练', 'GPT演进', 'RLHF', 'Tokenization'] },
-        { name: 'Prompt Engineering', status: 'pending', topics: ['ICL', 'Few-shot', 'CoT', '实战练习'] },
-        { name: 'LLM API 实战', status: 'pending', topics: ['OpenAI API', 'Function Calling', '成本优化', '综合项目'] },
+        { name: 'Tokenization + 预训练', status: 'in_progress', topics: ['BPE', 'GPT预训练', 'BERT-MLM', 'RLHF', 'Scaling Law'] },
+        { name: 'Prompt Engineering', status: 'pending', topics: ['Zero-shot', 'Few-shot', 'CoT', 'System Prompt'] },
+        { name: 'LLM API 实战', status: 'pending', topics: ['OpenAI API', 'Function Calling', '参数调优', 'QA机器人'] },
+        { name: 'RAG 系统构建', status: 'pending', topics: ['向量数据库', 'Embeddings', 'LangChain RAG', '知识问答项目'] },
       ]
     },
     {
@@ -64,9 +64,9 @@ export const progressData = {
       ]
     }
   ],
-  overallProgress: 42,
+  overallProgress: 55,
   totalWeeks: '8-10',
-  lastUpdated: '2026-03-22',
+  lastUpdated: '2026-04-09',
 }
         { name: 'Agent 基础', status: 'pending', topics: ['Agent概念', '核心组件', 'ReAct模式'] },
         { name: '开发实践', status: 'pending', topics: ['LangChain', 'Function Calling', 'RAG深入'] },
@@ -81,92 +81,152 @@ export const progressData = {
 
 // 一周学习计划数据
 export const weeklyPlan = {
-  dateRange: '2026-03-22 ~ 2026-03-28',
+  dateRange: '2026-04-10 ~ 2026-04-16',
   days: [
     {
-      date: '3/22',
-      weekday: '周六',
-      title: '卷积操作 + 特征提取',
-      category: 'cnn',
-      categoryLabel: 'CNN 🖼️',
-      duration: '45min',
-      keyQuestion: '卷积核如何提取图像特征？',
-      completed: false,
-    },
-    {
-      date: '3/23',
-      weekday: '周日',
-      title: '池化 + 经典CNN架构',
-      category: 'cnn',
-      categoryLabel: 'CNN 🖼️',
-      duration: '40min',
-      keyQuestion: '为什么CNN比MLP更适合图像？',
-      completed: false,
-    },
-    {
-      date: '3/24',
-      weekday: '周一',
-      title: 'RNN 基本结构 + 序列建模',
-      category: 'rnn',
-      categoryLabel: 'RNN 🔄',
-      duration: '45min',
-      keyQuestion: '隐藏状态如何记住"历史"？',
-      completed: false,
-    },
-    {
-      date: '3/25',
-      weekday: '周二',
-      title: '长程依赖 + LSTM/GRU',
-      category: 'rnn',
-      categoryLabel: 'RNN 🔄',
-      duration: '45min',
-      keyQuestion: '为什么vanilla RNN记不住长文本？',
-      completed: false,
-    },
-    {
-      date: '3/26',
-      weekday: '周三',
-      title: 'Attention 机制原理',
-      category: 'attention',
-      categoryLabel: 'Attention ✨',
-      duration: '50min',
-      keyQuestion: 'QKV 是什么？为什么能解决长程依赖？',
-      completed: false,
-    },
-    {
-      date: '3/27',
+      date: '4/10',
       weekday: '周四',
-      title: 'Self-Attention + Transformer 预览',
-      category: 'attention',
-      categoryLabel: 'Attention ✨',
-      duration: '50min',
-      keyQuestion: '从 RNN → Attention → Transformer 的演进',
+      title: 'Tokenization：文字如何变成 Token',
+      category: 'llm',
+      categoryLabel: 'LLM 原理 ⭐',
+      duration: '45min',
+      keyQuestion: 'BPE 算法是什么？为什么不能直接按字切分？',
       completed: false,
     },
     {
-      date: '3/28',
+      date: '4/11',
       weekday: '周五',
-      title: '阶段二总复习 + OpenClaw 预览',
-      category: 'review',
-      categoryLabel: '复习 + 新方向 📝',
-      duration: '50min',
-      keyQuestion: '串联：MLP → CNN → RNN → Attention + OpenClaw是什么？',
+      title: '预训练范式：GPT vs BERT',
+      category: 'llm',
+      categoryLabel: 'LLM 原理 ⭐',
+      duration: '45min',
+      keyQuestion: '语言建模 vs 完形填空，两者预训练任务有什么不同？',
+      completed: false,
+    },
+    {
+      date: '4/12',
+      weekday: '周六',
+      title: 'GPT 演进历史',
+      category: 'llm',
+      categoryLabel: 'LLM 原理 ⭐',
+      duration: '45min',
+      keyQuestion: 'GPT-1 到 GPT-4 各有什么关键突破？',
+      completed: false,
+    },
+    {
+      date: '4/13',
+      weekday: '周日',
+      title: 'RLHF 与模型对齐',
+      category: 'llm',
+      categoryLabel: 'LLM 原理 ⭐',
+      duration: '45min',
+      keyQuestion: 'InstructGPT 如何让模型"听话"？RLHF 三步流程是什么？',
+      completed: false,
+    },
+    {
+      date: '4/14',
+      weekday: '周一',
+      title: 'Scaling Law + LLM 总结',
+      category: 'llm',
+      categoryLabel: 'LLM 原理 ⭐',
+      duration: '30min',
+      keyQuestion: '参数量/数据量/算力三者关系是什么？',
+      completed: false,
+    },
+    {
+      date: '4/15',
+      weekday: '周二',
+      title: 'Prompt 基础：Zero-shot / Few-shot / CoT',
+      category: 'prompt',
+      categoryLabel: 'Prompt 工程 💬',
+      duration: '45min',
+      keyQuestion: '什么时候用 Few-shot？CoT 为什么能提升推理能力？',
+      completed: false,
+    },
+    {
+      date: '4/16',
+      weekday: '周三',
+      title: 'OpenAI API 上手实战',
+      category: 'api',
+      categoryLabel: 'API 实战 🛠️',
+      duration: '60min',
+      keyQuestion: 'chat.completions.create 怎么调用？system/user/assistant 角色怎么设计？',
       completed: false,
     },
   ],
   checklist: [
-    { id: 1, text: 'CNN：卷积操作与特征提取', completed: false },
-    { id: 2, text: 'CNN：池化与经典架构', completed: false },
-    { id: 3, text: 'RNN：序列建模与隐藏状态', completed: false },
-    { id: 4, text: 'RNN：序列建模与隐藏状态', completed: false },
-    { id: 5, text: 'Attention 机制原理（QKV）', completed: false },
-    { id: 6, text: 'Self-Attention + Transformer 预览', completed: false },
-    { id: 7, text: '阶段二总复习 + OpenClaw 预览', completed: false },
+    { id: 1, text: 'Tokenization：BPE 算法原理', completed: false },
+    { id: 2, text: '预训练范式：GPT（语言建模）vs BERT（MLM）', completed: false },
+    { id: 3, text: 'GPT 系列演进历史', completed: false },
+    { id: 4, text: 'RLHF 与模型对齐（InstructGPT）', completed: false },
+    { id: 5, text: 'Scaling Law 基本概念', completed: false },
+    { id: 6, text: 'Prompt Engineering：Zero-shot / Few-shot / CoT', completed: false },
+    { id: 7, text: 'OpenAI API 实战调用', completed: false },
   ]
 }
 
 // 学习日志记录
 export const studyLogs = [
+  {
+    date: '2026-04-09',
+    title: 'Transformer 架构完成 🎉 阶段二收官',
+    type: 'milestone',
+    icon: '🤖',
+    entries: [
+      {
+        subtitle: 'Transformer 核心结构',
+        items: [
+          { text: 'Encoder-Decoder 架构：编码理解 + 解码生成', status: 'completed' },
+          { text: 'Position Encoding：正弦/余弦函数赋予位置感', status: 'completed' },
+          { text: '残差连接 + LayerNorm：让深层网络稳定训练', status: 'completed' },
+          { text: 'Masked Self-Attention：生成时不能"偷看"未来', status: 'completed' },
+          { text: 'Cross-Attention：Decoder 关注 Encoder 输出', status: 'completed' },
+        ]
+      },
+      {
+        subtitle: 'BERT vs GPT',
+        items: [
+          { text: 'BERT = Encoder，双向注意力，适合理解任务', status: 'completed' },
+          { text: 'GPT = Decoder，单向注意力，适合生成任务', status: 'completed' },
+          { text: 'Transformer 是现代 LLM 的基础架构', status: 'info' },
+        ]
+      },
+      {
+        subtitle: '知识串联',
+        items: [
+          { text: '词嵌入 → Attention → Transformer → LLM 完整链路', status: 'info' },
+          { text: '神经网络阶段 100% 完成，正式进入 LLM 阶段', status: 'info' },
+        ]
+      }
+    ],
+    insight: 'Transformer 的革命性在于：完全抛弃 RNN，纯 Attention 构建，实现并行计算 + 长距离直接关联。所有现代 LLM 都站在它的肩膀上。'
+  },
+  {
+    date: '2026-04-09',
+    title: 'Attention 机制完成',
+    type: 'study',
+    icon: '🎯',
+    entries: [
+      {
+        subtitle: 'QKV 三要素',
+        items: [
+          { text: 'Query：我想找什么（搜索关键词）', status: 'completed' },
+          { text: 'Key：我是什么（文档标题/标签）', status: 'completed' },
+          { text: 'Value：我的实际内容（文档正文）', status: 'completed' },
+          { text: 'Attention(Q,K,V) = softmax(QK^T / √d_k) × V', status: 'completed' },
+        ]
+      },
+      {
+        subtitle: 'Self-Attention + Multi-Head',
+        items: [
+          { text: 'Self-Attention：序列内部建立连接，捕捉词间关系', status: 'completed' },
+          { text: 'Multi-Head：多个头并行，捕捉语法/语义/位置多种关系', status: 'completed' },
+          { text: '解决 RNN 长程依赖弱的核心方案', status: 'completed' },
+        ]
+      }
+    ],
+    insight: 'Attention = 加权求和。任意两个位置都能直接交互，这就是它胜过 RNN 的根本原因。'
+  },
   {
     date: '2026-03-08',
     title: '词嵌入 + Word2Vec 完成',
